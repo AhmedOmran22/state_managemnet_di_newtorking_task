@@ -6,10 +6,6 @@ abstract class Failure {
   Failure({required this.errMessage});
 }
 
-class FirebaseAuthFailure extends Failure {
-  FirebaseAuthFailure({required super.errMessage});
-}
-
 class ServerFailure extends Failure {
   ServerFailure({required super.errMessage});
 
