@@ -63,24 +63,3 @@ class ProductModel {
     );
   }
 }
-
-final fakeProduct = ProductModel(
-  id: "68ad9d40-802a-42e2-9269-dafc9e7dd314",
-  productCode: "PRD-20251007-BA1985",
-  name: "Smart Dishwasher",
-  description: "A modern smart dishwasher with advanced cleaning features.",
-  arabicName: "غسالة أطباق بوش",
-  arabicDescription: "غسالة أطباق ذكية من بوش بتقنيات متطورة لتنظيف مثالي.",
-  coverPictureUrl:
-      "https://cdn.mafrservices.com/sys-master-root/hfc/hb1/32680781611038/561732_main.jpg?im=Resize=400",
-  productPictures: null,
-  price: 200.00,
-  stock: 5,
-  weight: 9355.245,
-  color: "White",
-  rating: 3.3,
-  reviewsCount: 3,
-  discountPercentage: 20.0,
-  sellerId: "eab68d32-5f9c-4eb2-61c7-08ddccead94a",
-  categories: ["Appliances"],
-);
