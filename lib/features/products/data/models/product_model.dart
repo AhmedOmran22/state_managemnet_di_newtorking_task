@@ -62,4 +62,30 @@ class ProductModel {
           : null,
     );
   }
+  static ProductModel fakeProduct = ProductModel(
+    id: '1',
+    productCode: 'PRD-001',
+    name: 'Wireless Headphones',
+    description:
+        'High-quality wireless headphones with noise cancellation and 30 hours battery life.',
+    arabicName: 'سماعات لاسلكية',
+    arabicDescription:
+        'سماعات لاسلكية عالية الجودة بخاصية عزل الضوضاء وعمر بطارية يصل إلى 30 ساعة.',
+    coverPictureUrl:
+        'https://images.unsplash.com/photo-1519677100203-a0e668c92439',
+    productPictures: [
+      'https://images.unsplash.com/photo-1512499617640-c2f999098b59',
+      'https://images.unsplash.com/photo-1606813909355-1e8a5d84e91e',
+      'https://images.unsplash.com/photo-1574180045827-681f8a1a9622',
+    ],
+    price: 149.99,
+    stock: 25,
+    weight: 0.5,
+    color: 'Black',
+    rating: 4.7,
+    reviewsCount: 128,
+    discountPercentage: 10.0,
+    sellerId: 'seller_123',
+    categories: ['Electronics', 'Audio', 'Headphones'],
+  );
 }

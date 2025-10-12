@@ -37,8 +37,16 @@ class ProductItem extends StatelessWidget {
                 fit: BoxFit.cover,
                 placeholder: (context, url) => Container(
                   color: Colors.grey[300],
-                  child: const Center(
-                    child: CircularProgressIndicator(strokeWidth: 2),
+                  child: const Center(child: Icon(Icons.image, size: 48)),
+                ),
+
+                imageBuilder: (context, imageProvider) => Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    image: DecorationImage(
+                      image: imageProvider,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 errorWidget: (context, url, error) => Container(

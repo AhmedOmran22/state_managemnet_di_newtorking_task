@@ -9,7 +9,7 @@ class ProductCubit extends Cubit<ProductState> {
 
   Future<void> getProducts() async {
     emit(state.copyWith(productsState: ProductsState.loading));
-
+    // await Future.delayed(const Duration(seconds: 10));
     final result = await productRepo.getAllProducts();
 
     result.fold(

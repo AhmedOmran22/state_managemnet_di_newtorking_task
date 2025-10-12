@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
+import '../../data/models/product_model.dart';
 import '../cubits/product_cubit.dart';
 import '../cubits/product_state.dart';
 import 'product_item_widget.dart';
@@ -14,7 +16,16 @@ class ProductsListViewBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         switch (state.productsState) {
           case ProductsState.loading:
-            return const Center(child: CircularProgressIndicator());
+            return Skeletonizer(
+              enabled: state.productsState == ProductsState.loading,
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemCount: 6,
+                itemBuilder: (context, index) {
+                  return ProductItem(product: ProductModel.fakeProduct);
+                },
+              ),
+            );
           case ProductsState.failure:
             return Center(
               child: Text(state.errMessage ?? 'Something went wrong'),
