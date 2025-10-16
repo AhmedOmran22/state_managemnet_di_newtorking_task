@@ -29,4 +29,10 @@ class ProductRepoImpl implements ProductRepo {
       return left((ServerFailure(errMessage: e.message)));
     }
   }
+
+  @override
+  Future<Either<Failure, void>> toggleFavorite(String productId) async {
+    await Future.delayed(const Duration(seconds: 2));
+    return const Right(null);
+  }
 }

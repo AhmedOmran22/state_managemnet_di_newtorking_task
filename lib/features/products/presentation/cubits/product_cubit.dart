@@ -29,17 +29,20 @@ class ProductCubit extends Cubit<ProductState> {
     );
   }
 
-  void toggleFavorite(String productId) {
+  void toggleFavorite(String productId) async {
     final updatedProducts = List<ProductModel>.from(state.products ?? []);
     final index = updatedProducts.indexWhere((p) => p.id == productId);
-    // request to add favourite to the api
-    if (index != -1) {
-      updatedProducts[index].isFavorite = !updatedProducts[index].isFavorite;
-      emit(state.copyWith(products: updatedProducts));
-    }
-  }
 
-  // add products to favorites
-  //? request to add favorite
-  //!  emit (// state.procusts.indexWhere(id = id) => !isFavourite)
+    if (index == -1) return;
+    final oldValue = updatedProducts[index].isFavorite;
+    updatedProducts[index].isFavorite = !oldValue;
+    emit(state.copyWith(products: updatedProducts));
+
+    final result = await productRepo.toggleFavorite(productId);
+
+    result.fold((failure) {
+      updatedProducts[index].isFavorite = oldValue;
+      emit(state.copyWith(products: updatedProducts));
+    }, (_) {});
+  }
 }
