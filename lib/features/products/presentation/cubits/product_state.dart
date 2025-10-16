@@ -1,6 +1,6 @@
 import 'package:state_managemnet_di_newtorking_task/features/products/data/models/product_model.dart';
 
-enum ProductsState { initial, loading, success, failure }
+enum ProductsState { loading, success, failure }
 
 class ProductState {
   final List<ProductModel>? products;
@@ -10,7 +10,7 @@ class ProductState {
   const ProductState({
     this.products,
     this.errMessage,
-    this.productsState = ProductsState.initial,
+    this.productsState = ProductsState.loading,
   });
 
   ProductState copyWith({

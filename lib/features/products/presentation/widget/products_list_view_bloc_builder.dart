@@ -42,10 +42,6 @@ class ProductsListViewBlocBuilder extends StatelessWidget {
                 return ProductItem(product: product);
               },
             );
-          case ProductsState.initial:
-            return const Center(
-              child: Text('Press the button to load products'),
-            );
         }
       },
     );
