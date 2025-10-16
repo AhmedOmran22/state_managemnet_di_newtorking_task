@@ -133,6 +133,9 @@ class ProductItem extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
+                  // ? blocBuilder <PriductsCubit, ProductState> 
+                  // favourite Widget 
+                  // ? buildWhen state chainge from fav to not fav 
                 ],
               ),
             ),

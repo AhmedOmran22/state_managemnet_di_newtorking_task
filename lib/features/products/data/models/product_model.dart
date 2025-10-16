@@ -11,6 +11,7 @@ class ProductModel {
   final int? stock;
   final double? weight;
   final String? color;
+  bool isFavorite;
   final double? rating;
   final int? reviewsCount;
   final double? discountPercentage;
@@ -29,6 +30,7 @@ class ProductModel {
     this.price,
     this.stock,
     this.weight,
+    this.isFavorite = false,
     this.color,
     this.rating,
     this.reviewsCount,
