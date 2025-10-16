@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import '../../data/models/product_model.dart';
 import '../cubits/product_cubit.dart';
 import '../cubits/product_state.dart';
 
@@ -14,8 +14,9 @@ class FavouriteIconWidget extends StatelessWidget {
       selector: (state) {
         final product = state.products?.firstWhere(
           (product) => product.id == productId,
+          orElse: () => ProductModel.fakeProduct,
         );
-        return product!.isFavorite;
+        return product?.isFavorite ?? false;
       },
       builder: (context, isFavorite) {
         return IconButton(

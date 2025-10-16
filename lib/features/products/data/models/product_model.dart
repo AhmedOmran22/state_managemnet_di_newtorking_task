@@ -65,7 +65,7 @@ class ProductModel {
     );
   }
   static ProductModel fakeProduct = ProductModel(
-    id: '1',
+    id: '29f0a5b5-f8eb-4885-ba52-d0f581035222ahjdasjklhdasjd',
     productCode: 'PRD-001',
     name: 'Wireless Headphones',
     description:
@@ -84,6 +84,7 @@ class ProductModel {
     stock: 25,
     weight: 0.5,
     color: 'Black',
+    isFavorite: false,
     rating: 4.7,
     reviewsCount: 128,
     discountPercentage: 10.0,

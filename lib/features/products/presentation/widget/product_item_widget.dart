@@ -142,7 +142,7 @@ class ProductItem extends StatelessWidget {
             ],
           ),
         ),
-        FavouriteIconWidget(productId: product.id!),
+        FavouriteIconWidget(productId: product.id ?? ""),
       ],
     );
   }

@@ -11,7 +11,21 @@ class ProductCubit extends Cubit<ProductState> {
   Future<void> getProducts() async {
     emit(state.copyWith(productsState: ProductsState.loading));
     // await Future.delayed(const Duration(seconds: 10));
+
     final result = await productRepo.getAllProducts();
+
+    // if (state.products != null) {
+    //   emit(
+    //     state.copyWith(
+    //       productsState: ProductsState.success,
+    //       errMessage: result.fold(
+    //         (failure) => failure.errMessage,
+    //         (products) => null,
+    //       ),
+    //       products: state.products,
+    //     ),
+    //   );
+    // }
 
     result.fold(
       (failure) => emit(
@@ -44,5 +58,10 @@ class ProductCubit extends Cubit<ProductState> {
       updatedProducts[index].isFavorite = oldValue;
       emit(state.copyWith(products: updatedProducts));
     }, (_) {});
+  }
+
+  Future<void> pagination() async {
+    // request API
+    // emite(state.copyWith(products = state.products + response))
   }
 }
