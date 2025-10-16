@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,7 +15,7 @@ class FavouriteIconWidget extends StatelessWidget {
         final product = state.products?.firstWhere(
           (product) => product.id == productId,
         );
-        return product?.isFavorite ?? false;
+        return product!.isFavorite;
       },
       builder: (context, isFavorite) {
         return IconButton(
