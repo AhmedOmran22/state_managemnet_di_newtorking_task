@@ -20,7 +20,7 @@ class ProductsListViewBlocBuilder extends StatelessWidget {
               enabled: state.productsState == ProductsState.loading,
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
-                itemCount: 6,
+                itemCount: 4,
                 itemBuilder: (context, index) {
                   return ProductItem(product: ProductModel.fakeProduct);
                 },
